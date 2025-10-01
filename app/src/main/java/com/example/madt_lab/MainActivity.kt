@@ -1,20 +1,26 @@
 package com.example.madt_lab
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
-class MainActivity1 : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var tvMessage: TextView
+    private lateinit var btnChangeText: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        tvMessage = findViewById(R.id.tvMessage)
+        btnChangeText = findViewById(R.id.btnChangeText)
+
+        btnChangeText.setOnClickListener {
+            tvMessage.text = "Hello from MADT Lab 1"
         }
     }
 }
