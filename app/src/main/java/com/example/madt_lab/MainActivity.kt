@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnChangeColor: Button
     private lateinit var btnChangeBackground: Button
     override fun onCreate(savedInstanceState: Bundle?) {
+        //Code for revert
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
