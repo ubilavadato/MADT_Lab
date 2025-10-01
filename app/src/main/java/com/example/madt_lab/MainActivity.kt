@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tvMessage: TextView
     private lateinit var btnChangeText: Button
     private lateinit var btnChangeColor: Button
-
+    private lateinit var btnChangeBackground: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -31,6 +31,11 @@ class MainActivity : AppCompatActivity() {
         // Button 2: change text color
         btnChangeColor.setOnClickListener {
             tvMessage.setTextColor(Color.RED)
+        }
+        btnChangeBackground = findViewById(R.id.btnChangeBackground)
+        btnChangeBackground.setOnClickListener {
+            val root = findViewById<android.view.View>(R.id.rootLayout)
+            root.setBackgroundColor(android.graphics.Color.YELLOW)
         }
     }
 }
